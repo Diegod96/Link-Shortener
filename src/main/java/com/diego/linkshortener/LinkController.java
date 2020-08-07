@@ -29,8 +29,6 @@ public class LinkController {
     @Value
     static class CreateLinkResponse {
         private String shortenedLink;
-
-
     }
 
 
