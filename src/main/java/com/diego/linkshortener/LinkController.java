@@ -1,6 +1,7 @@
 package com.diego.linkshortener;
 
 
+import lombok.Value;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,31 +15,13 @@ public class LinkController {
         return Mono.just(new CreateLinkResponse("http://localhost:8080/aass2211"));
     }
 
+    @Value
     static class CreateLinkRequest {
         private String link;
-
-        public String getLink() {
-            return link;
-        }
-
-        public void setLink(String link) {
-            this.link = link;
-        }
     }
 
+    @Value
     static class CreateLinkResponse {
-        CreateLinkResponse(String shortenedLink) {
-            this.shortenedLink = shortenedLink;
-        }
-
-        public String getShortenedLink() {
-            return shortenedLink;
-        }
-
-        public void setShortenedLink(String shortenedLink) {
-            this.shortenedLink = shortenedLink;
-        }
-
         private String shortenedLink;
 
 
